@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://src/main/main.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/gui/GUI.png" type="Texture" id=2]
@@ -321,6 +321,25 @@ region = Rect2( 112, 112, 32, 16 )
 [sub_resource type="DynamicFont" id=46]
 size = 32
 font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=69]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=70]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=72]
+
+[sub_resource type="DynamicFont" id=71]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=73]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -1046,6 +1065,58 @@ custom_fonts/font = SubResource( 46 )
 text = "Reset"
 align = 1
 valign = 1
+
+[node name="Credits" type="Control" parent="Scenery/GUI"]
+margin_left = 800.0
+margin_top = 606.0
+margin_right = 1240.0
+margin_bottom = 713.0
+
+[node name="Panel" type="Panel" parent="Scenery/GUI/Credits"]
+modulate = Color( 0.0588235, 0.854902, 1, 0.803922 )
+margin_left = -14.0
+margin_top = -27.0
+margin_right = 463.788
+margin_bottom = 107.326
+
+[node name="Credits" type="Label" parent="Scenery/GUI/Credits"]
+margin_left = 171.0
+margin_top = -22.0
+margin_right = 275.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 69 )
+text = "Credits"
+
+[node name="Names" type="VBoxContainer" parent="Scenery/GUI/Credits"]
+margin_left = -16.0
+margin_top = 10.0
+margin_right = 468.0
+margin_bottom = 104.0
+custom_constants/separation = 14
+alignment = 1
+
+[node name="mounirtohami" type="LineEdit" parent="Scenery/GUI/Credits/Names"]
+margin_right = 484.0
+margin_bottom = 40.0
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 70 )
+custom_styles/read_only = SubResource( 72 )
+text = "https://mounirtohami.itch.io/"
+align = 1
+editable = false
+expand_to_text_length = true
+
+[node name="mounirtohami2" type="LineEdit" parent="Scenery/GUI/Credits/Names"]
+margin_top = 54.0
+margin_right = 484.0
+margin_bottom = 94.0
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 71 )
+custom_styles/read_only = SubResource( 73 )
+text = "https://tallbeard.itch.io/"
+align = 1
+editable = false
+expand_to_text_length = true
 
 [connection signal="finished" from="Ultilitys/AudioBg" to="." method="_on_audio_bg_finished"]
 [connection signal="pressed" from="Scenery/UIShop/Buttons/Apple" to="Scenery/UIShop" method="_on_apple_pressed"]
