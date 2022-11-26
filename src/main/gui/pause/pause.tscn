@@ -1,0 +1,303 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://src/fonts/alagard.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/sprites/gui/GUI.png" type="Texture" id=2]
+[ext_resource path="res://src/main/gui/pause/pause.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/gui/basic life bars a icons .png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 32, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 80, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 96, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 112, 32, 16 )
+
+[sub_resource type="DynamicFont" id=59]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 80, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 96, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 112, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 80, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 96, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 112, 32, 16 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 256, 80, 48 )
+
+[sub_resource type="DynamicFont" id=66]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 4 )
+region = Rect2( 65, 21, 47, 7 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+texture = SubResource( 67 )
+region_rect = Rect2( 0.104259, -0.122382, 47.0132, 7.10364 )
+expand_margin_top = 25.0
+expand_margin_bottom = 23.0
+
+[sub_resource type="StyleBoxTexture" id=32]
+
+[sub_resource type="Animation" id=25]
+resource_name = "In"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 0.153893, 0.341511, 0.574354 ),
+"update": 0,
+"values": [ Vector2( 0, -720 ), Vector2( 0, 100 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "Out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1.00001, 0.153893 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -720 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -720 ) ]
+}
+
+[node name="Pause" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -720.0
+margin_right = 3840.0
+margin_bottom = 1440.0
+mouse_filter = 2
+script = ExtResource( 3 )
+
+[node name="Menu" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Panel" type="TextureRect" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -222.0
+margin_top = -214.0
+margin_right = 222.0
+margin_bottom = 214.0
+texture = SubResource( 15 )
+expand = true
+
+[node name="Buttons" type="Control" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -110.0
+margin_right = 164.0
+margin_bottom = 110.0
+
+[node name="Back" type="TextureButton" parent="Menu/Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.0
+margin_top = -140.0
+margin_right = 82.0
+margin_bottom = -54.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+texture_normal = SubResource( 56 )
+texture_pressed = SubResource( 57 )
+texture_hover = SubResource( 58 )
+expand = true
+
+[node name="Label" type="Label" parent="Menu/Buttons/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 59 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="Options" type="TextureButton" parent="Menu/Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.0
+margin_top = -43.0
+margin_right = 82.0
+margin_bottom = 43.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+texture_normal = SubResource( 60 )
+texture_pressed = SubResource( 61 )
+texture_hover = SubResource( 43 )
+expand = true
+
+[node name="Label" type="Label" parent="Menu/Buttons/Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 59 )
+text = "Options"
+align = 1
+valign = 1
+
+[node name="Exit" type="TextureButton" parent="Menu/Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.0
+margin_top = 60.0
+margin_right = 82.0
+margin_bottom = 143.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+texture_normal = SubResource( 62 )
+texture_pressed = SubResource( 63 )
+texture_hover = SubResource( 64 )
+expand = true
+
+[node name="Label" type="Label" parent="Menu/Buttons/Exit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 59 )
+text = "Exit"
+align = 1
+valign = 1
+
+[node name="Options" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Menu" type="Control" parent="Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="TextureRect" parent="Options/Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -240.0
+margin_right = 400.0
+margin_bottom = 240.0
+texture = SubResource( 65 )
+expand = true
+
+[node name="Controls" type="Control" parent="Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Sfx" type="Control" parent="Options/Controls"]
+anchor_left = 0.448
+anchor_top = 0.5
+anchor_right = 0.552
+anchor_bottom = 0.604
+margin_left = -214.44
+margin_top = -97.0
+margin_right = -213.56
+margin_bottom = -96.88
+
+[node name="Name" type="Label" parent="Options/Controls/Sfx"]
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 135.0
+margin_bottom = 70.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 66 )
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="Options/Controls/Sfx"]
+margin_left = 79.0
+margin_top = 6.0
+margin_right = 351.0
+margin_bottom = 61.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_styles/slider = SubResource( 31 )
+custom_styles/grabber_area = SubResource( 32 )
+value = 50.0
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/In = SubResource( 25 )
+anims/Out = SubResource( 27 )
+anims/RESET = SubResource( 26 )
+
+[connection signal="pressed" from="Menu/Buttons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/Buttons/Exit" to="." method="_on_exit_pressed"]

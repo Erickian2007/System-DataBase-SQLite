@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The Runaway Journey v1.2.mp3-2c5495ab8334803b89f081466d540f47.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/The Runaway Journey v1.2.mp3"
+dest_files=[ "res://.import/The Runaway Journey v1.2.mp3-2c5495ab8334803b89f081466d540f47.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

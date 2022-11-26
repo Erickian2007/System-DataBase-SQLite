@@ -1,0 +1,228 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/fonts/alagard.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/sprites/gui/Shikashi's Fantasy Icons Pack v2/#2 - Transparent Icons & Drop Shadow.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/gui/GUI.png" type="Texture" id=3]
+[ext_resource path="res://src/main/inventory/inventory.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 144, 64, 48, 16 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 96, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 144, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 448, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 448, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 448, 32, 32 )
+
+[node name="Inventory" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 297.0
+margin_top = -275.0
+margin_right = 556.0
+margin_bottom = 207.0
+script = ExtResource( 4 )
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="TextureRect" parent="Background"]
+margin_left = -16.0
+margin_top = 96.0
+margin_right = 284.0
+margin_bottom = 496.0
+texture = SubResource( 9 )
+expand = true
+
+[node name="fill" type="TextureRect" parent="Background"]
+margin_left = 8.0
+margin_top = 80.0
+margin_right = 56.0
+margin_bottom = 96.0
+rect_scale = Vector2( 5, 5 )
+texture = SubResource( 11 )
+
+[node name="Label" type="Label" parent="Background"]
+margin_left = 21.0
+margin_top = 96.0
+margin_right = 237.0
+margin_bottom = 141.0
+custom_colors/font_color = Color( 0.360784, 0.301961, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Inventory"
+align = 1
+valign = 1
+
+[node name="Slot1" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.5
+margin_top = -59.0
+margin_right = -65.5
+margin_bottom = -27.0
+rect_scale = Vector2( 2.2, 2.2 )
+texture = SubResource( 2 )
+
+[node name="Slot2" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.5
+margin_top = 27.0
+margin_right = -65.5
+margin_bottom = 59.0
+rect_scale = Vector2( 2.2, 2.2 )
+texture = SubResource( 2 )
+
+[node name="Slot3" type="TextureRect" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.5
+margin_top = 119.0
+margin_right = -64.5
+margin_bottom = 151.0
+rect_scale = Vector2( 2.2, 2.2 )
+texture = SubResource( 2 )
+
+[node name="Dics" type="VBoxContainer" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.5
+margin_top = -45.0
+margin_right = 7.5
+margin_bottom = 29.0
+rect_scale = Vector2( 3, 3 )
+custom_constants/separation = 13
+
+[node name="TextureRect" type="TextureRect" parent="Background/Dics"]
+modulate = Color( 0.509804, 0.509804, 0.509804, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+texture = SubResource( 13 )
+
+[node name="TextureRect2" type="TextureRect" parent="Background/Dics"]
+modulate = Color( 0.509804, 0.509804, 0.509804, 1 )
+margin_top = 29.0
+margin_right = 16.0
+margin_bottom = 45.0
+texture = SubResource( 13 )
+
+[node name="TextureRect3" type="TextureRect" parent="Background/Dics"]
+modulate = Color( 0.509804, 0.509804, 0.509804, 1 )
+margin_top = 58.0
+margin_right = 16.0
+margin_bottom = 74.0
+texture = SubResource( 13 )
+
+[node name="Items" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -43.5
+margin_top = -42.0
+margin_right = 110.5
+margin_bottom = 80.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 52, 16 )
+custom_constants/separation = 13
+alignment = 1
+
+[node name="Apple" type="TextureRect" parent="Items"]
+margin_right = 154.0
+margin_bottom = 32.0
+texture = SubResource( 3 )
+
+[node name="Banana" type="TextureRect" parent="Items"]
+margin_top = 45.0
+margin_right = 154.0
+margin_bottom = 77.0
+texture = SubResource( 4 )
+
+[node name="Strawberry" type="TextureRect" parent="Items"]
+margin_top = 90.0
+margin_right = 154.0
+margin_bottom = 122.0
+texture = SubResource( 5 )
+
+[node name="Amounts" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 61.5
+margin_top = -42.0
+margin_right = 101.5
+margin_bottom = 171.0
+custom_constants/separation = 39
+
+[node name="Apple" type="Label" parent="Amounts"]
+margin_right = 40.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 0.360784, 0.301961, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Banana" type="Label" parent="Amounts"]
+margin_top = 84.0
+margin_right = 40.0
+margin_bottom = 129.0
+custom_colors/font_color = Color( 0.360784, 0.301961, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Strawberry" type="Label" parent="Amounts"]
+margin_top = 168.0
+margin_right = 40.0
+margin_bottom = 213.0
+custom_colors/font_color = Color( 0.360784, 0.301961, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
