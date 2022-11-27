@@ -1,7 +1,7 @@
 extends Camera2D
 
 export(Vector2) var default_position
-export(float) var shake_force = 10
+export(float) var shake_force = 10.0
 export(float) var shake_time = 0.3
 
 var shaking: bool = false setget set_shaking

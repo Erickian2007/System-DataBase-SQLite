@@ -4,8 +4,8 @@ const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
 
 var db
 var db_path: String = "res://src/db/Shop_DataBase"
-	
-	
+
+
 func init_db() -> void:
 	db = SQLite.new()
 	db.path = db_path
